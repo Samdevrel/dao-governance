@@ -7,27 +7,7 @@ interface Proposal {
   title: string;
   description: string;
   proposer: string;
-  status: 'acti
-      <header className="border-b-4 border-purple-400 bg-gray-900 p-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div>
-              <h1 className="text-3xl md:text-4xl font-black">App</h1>
-              <p className="text-gray-400 mt-2">Interactive demo</p>
-            </div>
-            <nav className="flex gap-2">
-              <a href="/" className="px-4 py-2 bg-gray-800 border-2 border-gray-600 hover:border-purple-400 rounded font-bold transition-all">
-                Home
-              </a>
-              <a href="/docs" className="px-4 py-2 bg-purple-500 border-2 border-purple-400 rounded font-bold transition-all">
-                Documentation
-              </a>
-            </nav>
-          </div>
-        </div>
-      </header>
-
-ve' | 'passed' | 'failed' | 'pending';
+  status: 'active' | 'passed' | 'failed' | 'pending';
   forVotes: number;
   againstVotes: number;
   abstainVotes: number;
@@ -310,7 +290,13 @@ export default function Home() {
         <footer className="text-center text-gray-500 text-sm py-8 border-t border-gray-800">
           <p>
             Built by <a href="https://x.com/samdevrel" className="text-indigo-400 hover:underline">@samdevrel</a>
-          </p>
+          <button
+            onClick={() => window.location.href = '/docs/overview'}
+            className="w-full py-4 bg-purple-500 text-white font-bold border-4 border-purple-400 hover:bg-purple-400 mb-4"
+          >
+            {buttonText}
+          </button>
+                    </p>
         </footer>
       </div>
     </main>
